@@ -509,6 +509,20 @@
     }
 
   </script>
+    <div>
+  Visitors: <span id="visitor-count">0</span>
+</div>
+
+<script>
+fetch("https://api.countapi.xyz/hit/rtupaper/mohitgupta2007")
+  .then((response) => response.json())
+  .then((data) => {
+    document.getElementById("visitor-count").innerText = data.value;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+</script>
 
 </body>
 </html>
