@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Gupta | Professional Portfolio</title>
+    <!-- Google Fonts: Inter for a clean, corporate look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Premium Dark Theme Color Palette */
+        :root {
+            --bg-primary: #09090b; /* Deep zinc for main background */
+            --bg-secondary: #18181b; /* Elevated surface for contrast sections */
+            --bg-card: #131316; /* Card background */
+            --border-color: #27272a; /* Subtle borders */
+            --text-main: #f4f4f5; /* Off-white for high readability */
+            --text-muted: #a1a1aa; /* Soft gray for secondary text */
+            --accent: #3b82f6; /* Professional tech blue */
+            --accent-hover: #60a5fa; /* Lighter blue for hover states */
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 8%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* --- Global Sections --- */
+        section {
+            padding: 7rem 8% 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .bg-surface {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            min-height: 100vh;
+            justify-content: center;
+            text-align: left;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 10rem;
+        }
+
+        .hero-subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        #home h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        #home h1 span {
+            color: var(--text-muted);
+            display: block;
+        }
+
+        #home p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            background-color: var(--bg-secondary);
+        }
+
+        /* --- About Section --- */
+        .about-text {
+            max-width: 700px;
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--accent);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- Contact Section --- */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-card);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+            background: rgba(59, 130, 246, 0.03);
+        }
+
+        .contact-card div {
+            text-align: left;
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .contact-card svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--bg-primary);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .nav-links { display: none; }
+            section { padding: 5rem 5% 4rem; }
+            #home { text-align: center; align-items: center; padding-top: 8rem; }
+            #home h1 { font-size: 3rem; }
+            .btn-group { flex-direction: column; width: 100%; }
+            .btn { text-align: center; }
+            .contact-card { flex-direction: column; gap: 1rem; text-align: center; }
+            .contact-card div { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home" class="logo">Mohit<span>Gupta</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div>
+            <span class="hero-subtitle">Hi there, I'm</span>
+            <h1>Mohit Gupta <span>Web Developer.</span></h1>
+            <p>I build clean, accessible, and performant digital experiences bridging the gap between solid engineering and elegant design.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-surface">
+        <div class="section-header">
+            <p>Introduction</p>
+            <h2>About Me</h2>
+        </div>
+        <p class="about-text">
+            I am a passionate tech enthusiast with a deep focus on software architecture and modern web development. Whether I am writing optimized algorithms in C or designing responsive interfaces, my goal is always to deliver logical, clean, and scalable solutions. I also have a strong creative side, utilizing my editing skills to ensure that the visual aesthetics of my projects match their technical quality.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <p>Expertise</p>
+            <h2>What I Do</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">⚙️</div>
+                <h3>C Programming</h3>
+                <p>Proficient in core algorithms, memory management, and data structures. I write efficient, low-level code focused on raw performance and logic.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Specialized in creating responsive, modern web interfaces. I focus on clean code architecture and seamless user experiences across all devices.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3>Media Editing</h3>
+                <p>Creative digital editing encompassing video and image manipulation, allowing me to bring a highly polished visual aesthetic to technical projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-surface">
+        <div class="section-header">
+            <p>Get In Touch</p>
+            <h2>Let's Work Together</h2>
+        </div>
+        <div class="contact-container">
+            <!-- Email -->
+            <a href="mailto:gupta2007mohit@gmail.com" class="contact-card">
+                <div>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">gupta2007mohit@gmail.com</span>
+                </div>
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+            
+            <!-- Phone -->
+            <a href="tel:+916375809853" class="contact-card">
+                <div>
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">+91 6375809853</span>
+                </div>
+                <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/mohit-gupta-ab1726355/" target="_blank" class="contact-card">
+                <div>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">Mohit Gupta</span>
+                </div>
+                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Mohit Gupta. Designed & Built with intent.</p>
+    </footer>
+
+</body>
+</html>
